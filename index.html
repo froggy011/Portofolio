@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portofolio | Helmy Ainur Ridho</title>
+<meta name="description" content="Portofolio Helmy Ainur Ridho, mahasiswa Informatika dengan fokus UI/UX Design, Video Editing, dan Graphic Design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F5F8; --ink:#13203B; --muted:#55627C; --line:#D5DCE6;
+  --signal:#FFC531; --card:#FFFFFF;
+  --head:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Public Sans',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0E1628; --ink:#EEF2F8; --muted:#9AA7C0; --line:#25324F; --card:#16213A;}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.65;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-family:var(--head);font-weight:800;text-decoration:none;font-size:1.1rem}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{text-decoration:none;font-weight:500;font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent}
+nav ul a:hover,nav ul a.on{border-color:var(--signal)}
+
+/* home */
+#home{padding-top:88px}
+.bubble{display:inline-block;background:var(--signal);color:#13203B;font-weight:600;font-size:.9rem;padding:8px 16px;border-radius:18px 18px 18px 4px;margin-bottom:28px}
+h1{font-family:var(--head);font-weight:800;font-size:clamp(2.6rem,8vw,5.6rem);line-height:1.02;letter-spacing:-.03em;max-width:12ch}
+.lead{max-width:52ch;color:var(--muted);margin:28px 0 36px;font-size:1.1rem}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink);transition:background .2s,color .2s}
+.btn.fill{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--signal);color:#13203B;border-color:var(--signal)}
+
+/* headings */
+h2{font-family:var(--head);font-weight:800;font-size:clamp(1.9rem,4vw,2.8rem);letter-spacing:-.02em;margin-bottom:36px}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:56px}
+.about p+p{margin-top:16px}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;align-self:start}
+.facts h3{font-family:var(--head);font-size:1.05rem;margin-bottom:12px}
+.facts ul{list-style:none}
+.facts li{padding:9px 0;border-top:1px solid var(--line);font-size:.95rem}
+.facts li:first-child{border-top:0}
+.facts b{display:block;font-weight:600}
+.facts span{color:var(--muted)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.tool{display:flex;align-items:center;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.tool svg{width:56px;height:56px;flex:none}
+.tool b{font-family:var(--head);font-size:1.1rem;display:block;line-height:1.2}
+.tool span{color:var(--muted);font-size:.88rem}
+
+/* project */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{font:inherit;font-weight:500;font-size:.9rem;padding:8px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.proj img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);margin-bottom:6px}
+.proj .tag{font-size:.82rem;font-weight:600;color:var(--muted)}
+.proj h3{font-family:var(--head);font-size:1.3rem;line-height:1.25}
+.proj p{color:var(--muted);font-size:.96rem;flex:1}
+.proj a{font-weight:600;text-decoration-color:var(--signal);text-decoration-thickness:3px;text-underline-offset:4px}
+
+/* contact */
+.contact p{max-width:52ch;color:var(--muted);margin-bottom:28px}
+.links{display:flex;flex-direction:column;max-width:460px}
+.links a{display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid var(--line);text-decoration:none;font-weight:500}
+.links a:last-child{border-bottom:1px solid var(--line)}
+.links a:hover{background:var(--card);padding-left:12px;padding-right:12px}
+.links span{color:var(--muted);font-weight:400}
+footer{padding:28px 0 48px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (max-width:720px){
+  .about{grid-template-columns:1fr}
+  nav ul{gap:16px}
+  section{padding:68px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Navigasi utama">
+      <a class="logo" href="#home">Helmy Ainur Ridho</a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home">
+  <div class="wrap">
+    <span class="bubble">Halo, saya mahasiswa Informatika</span>
+    <h1>Helmy Ainur Ridho</h1>
+    <p class="lead">UI/UX Design, Video Editing, dan Graphic Design. Di sini saya mengumpulkan karya visual yang saya buat.</p>
+    <div class="btns">
+      <a class="btn fill" href="#project">Lihat project</a>
+      <a class="btn" href="#contact">Hubungi saya</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <div class="about">
+      <div>
+        <p>Saya Helmy Ainur Ridho, mahasiswa aktif Program Studi Informatika di Universitas Amikom Yogyakarta dengan minat dan keahlian di bidang UI/UX Design, Video Editing, dan Graphic Design. Saya senang mengeksplorasi ide kreatif dan menerjemahkannya menjadi karya visual yang fungsional serta menarik secara estetika.</p>
+        <p>Dalam bidang UI/UX, saya terbiasa merancang antarmuka yang intuitif dengan mempertimbangkan pengalaman pengguna sebagai prioritas utama. Di sisi lain, kemampuan saya dalam video editing dan graphic design memungkinkan saya untuk menghasilkan konten visual yang komunikatif, baik untuk kebutuhan promosi, storytelling, maupun media sosial.</p>
+        <p>Selama menempuh studi, saya terus mengasah kemampuan melalui berbagai proyek, baik akademik maupun personal, guna memperluas wawasan dan meningkatkan kualitas kerja saya di industri kreatif dan teknologi.</p>
+      </div>
+      <aside class="facts">
+        <h3>Ringkasan</h3>
+        <ul>
+          <li><b>Pendidikan</b><span>S1 Informatika, Universitas Amikom Yogyakarta</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills" id="skillGroups"></div>
+  </div>
+</section>
+
+<section id="project">
+  <div class="wrap">
+    <h2>Project</h2>
+    <div class="filters" id="filters" role="group" aria-label="Filter project"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <h2>Contact</h2>
+    <p>Terbuka untuk kolaborasi, magang, dan proyek kreatif. Pilih saluran yang paling nyaman.</p>
+    <div class="links">
+      <a href="mailto:helmyridho51@gmail.com">Email <span>helmyridho51@gmail.com</span></a>
+      <a href="https://www.linkedin.com/in/helmy-ainur-ridho-65992a314/" target="_blank" rel="noopener">LinkedIn <span>Helmy Ainur Ridho</span></a>
+      <a href="https://www.instagram.com/helmyridho_" target="_blank" rel="noopener">Instagram <span>@helmyridho_</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr"></span> Helmy Ainur Ridho. Dibuat dengan HTML, CSS, dan GitHub Pages.</div>
+</footer>
+
+<script>
+// EDIT DI SINI: tambah atau ubah project kamu
+const projects = [
+  {title:"Website Bakpia Sorsawo", cat:"UI/UX", desc:"Landing page untuk usaha bakpia asal Pathuk, Yogyakarta. Memuat profil usaha, varian rasa, tiga langkah pemesanan lewat WhatsApp, testimoni pelanggan, dan FAQ.", img:"img/bakpia-sorsawo.jpg", link:"https://www.bakpiasorsawo.my.id/"},
+  {title:"Aplikasi Pemesanan Tiket Bus", cat:"UI/UX", desc:"Rancangan antarmuka mobile di Figma dengan alur lengkap: onboarding, daftar dan masuk, beranda, informasi rute bus, detail pemesanan, pilihan metode pembayaran, sampai halaman transaksi berhasil.", img:"img/tiket-bus.jpg", link:"https://www.figma.com/design/v6cdW5IwrKluYElQq2HfMG/aplikasi-pemesanan-tiket-bus?node-id=0-1&p=f"},
+  {title:"TITIK TUJU EPS 4", cat:"Video", desc:"Episode 4 dari web series Titik Tuju. Saya berperan sebagai pemeran utama sekaligus mengedit videonya menggunakan CapCut.", img:"https://img.youtube.com/vi/bcCWzm2-Fwg/mqdefault.jpg", link:"https://www.youtube.com/watch?v=bcCWzm2-Fwg"}
+];
+
+// EDIT DI SINI: tambah atau hapus software. Ikon berupa kode SVG sederhana
+const tx = (bg, fg, t) => `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="10" fill="${bg}"/><text x="24" y="32" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="23" fill="${fg}">${t}</text></svg>`;
+const figma = `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="10" fill="#1E1E1E"/><g transform="translate(14.5 9.75) scale(.5)"><path d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z" fill="#1ABCFE"/><path d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z" fill="#0ACF83"/><path d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z" fill="#FF7262"/><path d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z" fill="#F24E1E"/><path d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z" fill="#A259FF"/></g></svg>`;
+const capcut = `<svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="10" fill="#000"/><path d="M15 15l18 18M33 15L15 33" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg>`;
+const skills = [
+  {name:"Photoshop", use:"Graphic Design", icon:tx("#001E36","#31A8FF","Ps")},
+  {name:"Premiere Pro", use:"Video Editing", icon:tx("#00005B","#9999FF","Pr")},
+  {name:"Figma", use:"UI/UX Design", icon:figma},
+  {name:"CapCut", use:"Video Editing", icon:capcut}
+];
+document.getElementById('skillGroups').innerHTML = skills.map(s =>
+  `<div class="tool">${s.icon}<div><b>${s.name}</b><span>${s.use}</span></div></div>`
+).join('');
+
+const grid = document.getElementById('grid');
+const filters = document.getElementById('filters');
+const cats = ['Semua', ...new Set(projects.map(p => p.cat))];
+
+function render(cat){
+  grid.innerHTML = projects
+    .filter(p => cat === 'Semua' || p.cat === cat)
+    .map(p => `<article class="proj">${p.img ? `<img src="${p.img}" alt="Tampilan ${p.title}" loading="lazy">` : ''}<span class="tag">${p.cat}</span><h3>${p.title}</h3><p>${p.desc}</p><a href="${p.link}" target="_blank" rel="noopener">Buka karya</a></article>`)
+    .join('');
+  filters.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.c === cat));
+}
+filters.innerHTML = cats.map(c => `<button data-c="${c}">${c}</button>`).join('');
+filters.addEventListener('click', e => { if(e.target.dataset.c) render(e.target.dataset.c); });
+render('Semua');
+
+// tandai menu aktif saat scroll
+const links = document.querySelectorAll('nav ul a');
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if(e.isIntersecting){
+    links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
+  }});
+}, {rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section').forEach(s => io.observe(s));
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
